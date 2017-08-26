@@ -13,6 +13,8 @@ date: 2017-08-25 18:30:49
 
 Have you been using a tried-and-true testing framework for years and wondered whether it might ever be worth it to migrate over to one of the scrappy newcomers? Maybe you wished someone would write up a practical comparison or put together a simple how-to-guide to ease the transition? This was exactly the situation in which we found ourselves on a team that had long used Nodeunit. We decided to take the jump and switched a newer project over to [Jest](https://facebook.github.io/jest/https://facebook.github.io/jest/). What follows is a practical guide born out of that experience. It was originally written as documentation to help developers on that team make the transition as smoothly as possible. As such, it will be particularly helpful if you are migrating or have migrated from Nodeunit to Jest. Regardless, there's a lot to glean for anyone considering Jest or using it in any capacity.
 
+<!-- more -->
+
 ## Wait. How do I...
 
 So here you are, your team has switched from Nodeunit to Jest and everything is different and frustrating. Have no fear! Jest has particularly helpful [guides](https://facebook.github.io/jest/docs/getting-started.html) and [documentation](https://facebook.github.io/jest/docs/api.html) and here I've put together a how-to-guide addressing the specific hiccups you are most likely to encounter. Each of the following points answers the question: "Wait. How do I ____?".
