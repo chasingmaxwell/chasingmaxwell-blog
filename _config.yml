@@ -110,4 +110,6 @@ social:
   GitHub: https://github.com/chasingmaxwell
   Twitter: https://twitter.com/chasingmaxwell
 
-disqus_shortname: chasingmaxwell-com
+disqus:
+  enable: true
+  shortname: chasingmaxwell-com
