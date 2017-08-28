@@ -9,7 +9,7 @@ tags:
 date: 2017-08-25 18:30:49
 ---
 
-Have you been using a tried-and-true testing framework for years and wondered whether it might ever be worth it to migrate over to one of the scrappy newcomers? Maybe you wished someone would write up a practical comparison or put together a simple how-to-guide to ease the transition? This was exactly the situation in which we found ourselves on a team that had long used Nodeunit. We decided to take the jump and switched a newer project over to [Jest](https://facebook.github.io/jest/https://facebook.github.io/jest/). What follows is a practical guide born out of that experience.
+Have you been using a tried-and-true testing framework for years and wondered whether it might ever be worth it to migrate over to one of the scrappy newcomers? Maybe you've wished someone would write up a practical comparison or put together a simple how-to-guide to ease the transition. This was exactly the situation in which we found ourselves on a team that had long used Nodeunit. We decided to take the jump and switched a newer project over to [Jest](https://facebook.github.io/jest/https://facebook.github.io/jest/). What follows is a practical guide born out of that experience.
 
 <!-- more -->
 
@@ -399,6 +399,8 @@ cache:
 ### Occasional illegitimate errors within CI builds
 
 In our experience, tests within CI builds occasionally fail with random SyntaxError exceptions like `SyntaxError: missing ) after argument list` or `SyntaxError: unexpected token }`. It appears this is caused by a race condition where Jest attempts to write a transformed file to cache from multiple child processes at the same time. If you run into this bug and simply restarting the build is not a reasonable option, the workaround for now is to run Jest with either the `--no-cache` or the `--runInBand` flag. There _is_, however, an [active issue](https://github.com/facebook/jest/issues/1874) and an [open pull request](https://github.com/facebook/jest/pull/3561) for this bug on GitHub. So hopefully we'll see a fix soon.
+
+__UPDATE (2017-08-28)__: A [new pull request](https://github.com/facebook/jest/pull/4088) was merged which should address this issue. Let's hope for a fix in v20.0.5! In the meantime, you can test it out by requiring `jest@test` in your project.
 
 ## Conclusion
 
