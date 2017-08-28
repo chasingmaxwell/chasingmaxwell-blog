@@ -91,18 +91,18 @@
 
 
 
-<meta name="description" content="Have you been using a tried-and-true testing framework for years and wondered whether it might ever be worth it to migrate over to one of the scrappy newcomers? Maybe you wished someone would write up">
+<meta name="description" content="Have you been using a tried-and-true testing framework for years and wondered whether it might ever be worth it to migrate over to one of the scrappy newcomers? Maybe you’ve wished someone would write">
 <meta name="keywords" content="Nodeunit,Jest,Testing,NodeJS,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="From Nodeunit to Jest: The Post-Nodeunit Jest Survival Guide">
 <meta property="og:url" content="http://chasingmaxwell.com/2017/08/25/From-Nodeunit-to-Jest/index.html">
 <meta property="og:site_name" content="chasingmaxwell">
-<meta property="og:description" content="Have you been using a tried-and-true testing framework for years and wondered whether it might ever be worth it to migrate over to one of the scrappy newcomers? Maybe you wished someone would write up">
+<meta property="og:description" content="Have you been using a tried-and-true testing framework for years and wondered whether it might ever be worth it to migrate over to one of the scrappy newcomers? Maybe you’ve wished someone would write">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-08-26T22:26:37.821Z">
+<meta property="og:updated_time" content="2017-08-28T16:48:45.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="From Nodeunit to Jest: The Post-Nodeunit Jest Survival Guide">
-<meta name="twitter:description" content="Have you been using a tried-and-true testing framework for years and wondered whether it might ever be worth it to migrate over to one of the scrappy newcomers? Maybe you wished someone would write up">
+<meta name="twitter:description" content="Have you been using a tried-and-true testing framework for years and wondered whether it might ever be worth it to migrate over to one of the scrappy newcomers? Maybe you’ve wished someone would write">
 
 
 
@@ -352,7 +352,7 @@
       
 
       
-        <p>Have you been using a tried-and-true testing framework for years and wondered whether it might ever be worth it to migrate over to one of the scrappy newcomers? Maybe you wished someone would write up a practical comparison or put together a simple how-to-guide to ease the transition? This was exactly the situation in which we found ourselves on a team that had long used Nodeunit. We decided to take the jump and switched a newer project over to <a href="https://facebook.github.io/jest/https://facebook.github.io/jest/" target="_blank" rel="external">Jest</a>. What follows is a practical guide born out of that experience.</p>
+        <p>Have you been using a tried-and-true testing framework for years and wondered whether it might ever be worth it to migrate over to one of the scrappy newcomers? Maybe you’ve wished someone would write up a practical comparison or put together a simple how-to-guide to ease the transition. This was exactly the situation in which we found ourselves on a team that had long used Nodeunit. We decided to take the jump and switched a newer project over to <a href="https://facebook.github.io/jest/https://facebook.github.io/jest/" target="_blank" rel="external">Jest</a>. What follows is a practical guide born out of that experience.</p>
 <a id="more"></a>
 <p>This post was originally written as documentation to help developers on that team make the transition as smoothly as possible. As such, it will be particularly helpful if you are migrating or have migrated from Nodeunit to Jest. Regardless, there’s a lot to glean for anyone considering Jest or using it in any capacity.</p>
 <h2 id="Wait-How-do-I…"><a href="#Wait-How-do-I…" class="headerlink" title="Wait. How do I…"></a>Wait. How do I…</h2><p>So here you are, your team has switched from Nodeunit to Jest and everything is different and frustrating. Have no fear! Jest has particularly helpful <a href="https://facebook.github.io/jest/docs/getting-started.html" target="_blank" rel="external">guides</a> and <a href="https://facebook.github.io/jest/docs/api.html" target="_blank" rel="external">documentation</a> and here I’ve put together a how-to-guide addressing the specific hiccups you are most likely to encounter. Each of the following points answers the question: “Wait. How do I <em>__</em>?”.</p>
@@ -413,6 +413,7 @@
 <figure class="highlight json"><figcaption><span>package.json</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"jest"</span>: &#123;</div><div class="line">    <span class="attr">"cacheDirectory"</span>: <span class="string">".tmp/jest_cache"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight yml"><figcaption><span>.travis.yml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">cache:</span></div><div class="line"><span class="attr">  directories:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">'.tmp'</span></div></pre></td></tr></table></figure>
 <h3 id="Occasional-illegitimate-errors-within-CI-builds"><a href="#Occasional-illegitimate-errors-within-CI-builds" class="headerlink" title="Occasional illegitimate errors within CI builds"></a>Occasional illegitimate errors within CI builds</h3><p>In our experience, tests within CI builds occasionally fail with random SyntaxError exceptions like <code>SyntaxError: missing ) after argument list</code> or <code>SyntaxError: unexpected token }</code>. It appears this is caused by a race condition where Jest attempts to write a transformed file to cache from multiple child processes at the same time. If you run into this bug and simply restarting the build is not a reasonable option, the workaround for now is to run Jest with either the <code>--no-cache</code> or the <code>--runInBand</code> flag. There <em>is</em>, however, an <a href="https://github.com/facebook/jest/issues/1874" target="_blank" rel="external">active issue</a> and an <a href="https://github.com/facebook/jest/pull/3561" target="_blank" rel="external">open pull request</a> for this bug on GitHub. So hopefully we’ll see a fix soon.</p>
+<p><strong>UPDATE (2017-08-28)</strong>: A <a href="https://github.com/facebook/jest/pull/4088" target="_blank" rel="external">new pull request</a> was merged which should address this issue. Let’s hope for a fix in v20.0.5! In the meantime, you can test it out by requiring <code>jest@test</code> in your project.</p>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Although we experienced some minor pain along the way, overall our team’s transition to Jest was smooth and beneficial. The team enjoyed the new tools at their disposal and most of us agreed the syntax and organizational differences in Jest were a huge step up. If you’ve been on the fence about switching to Jest, maybe you ought to give it a whirl? This guide can help!</p>
 
       
