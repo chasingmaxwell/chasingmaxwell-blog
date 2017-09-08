@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chasingmaxwell.com/"/>
-  <updated>2017-08-28T16:48:45.200Z</updated>
+  <updated>2017-09-08T21:53:12.916Z</updated>
   <id>http://chasingmaxwell.com/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>The Illusion of Shape Control In GraphQL</title>
+    <link href="http://chasingmaxwell.com/2017/09/08/The-Illusion-of-Shape-Control-In-GraphQL/"/>
+    <id>http://chasingmaxwell.com/2017/09/08/The-Illusion-of-Shape-Control-In-GraphQL/</id>
+    <published>2017-09-08T21:33:41.000Z</published>
+    <updated>2017-09-08T21:53:12.916Z</updated>
+    
+    <content type="html"><![CDATA[<p>GraphQL offers clients a pretty incredible feature-set. The ease with which you can access and control included properties in the query is a breath of fresh air for front-end developers who’ve fought with complicated queries on more rigid interfaces like JSON API. GraphQL makes it so good, in fact, that it fools you into thinking it does things it doesn’t do. For instance, it produces the illusion that you can actually control the response shape <em>from the client</em>. Unfortunately, I’m here to burst your bubble… but don’t worry, there’s good news too.</p>
+<a id="more"></a>
+<h2 id="The-Bad-News"><a href="#The-Bad-News" class="headerlink" title="The Bad News"></a>The Bad News</h2><p>Despite what you may have thought (and unfortunately what many will tell you), you cannot control shape from the client in GraphQL. Sure, you can do some things that come pretty close. You can rename and duplicate properties, for instance. But you are still fundamentally chained to the shape defined on the server.</p>
+<h2 id="The-Good-News-Introducing-GraphQL-Leveler"><a href="#The-Good-News-Introducing-GraphQL-Leveler" class="headerlink" title="The Good News: Introducing GraphQL Leveler!"></a>The Good News: Introducing GraphQL Leveler!</h2><p>Or are you? As someone who’s been duped by this shape-shifting mirage, I set out to make true client-side shape control possible. I ended up with <a href="https://github.com/chasingmaxwell/graphql-leveler" target="_blank" rel="external">GraphQL Leveler</a> — an NPM package for GraphQL servers which gives their clients the shape shifting functionality they thought the had!</p>
+<h2 id="More-Reading"><a href="#More-Reading" class="headerlink" title="More Reading"></a>More Reading</h2><p>I wrote recently about GraphQL Leveler and the misconception of client-side shape control in my post <a href="https://www.fourkitchens.com/blog/development/graphql-leveler-controlling-shape-query/" target="_blank" rel="external">GraphQL Leveler: Controlling Shape In The Query</a> on the Four Kitchens blog. If you need more convincing about the illusion of shape control or if you want to learn more about GraphQL Leveler, check it out!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;GraphQL offers clients a pretty incredible feature-set. The ease with which you can access and control included properties in the query is a breath of fresh air for front-end developers who’ve fought with complicated queries on more rigid interfaces like JSON API. GraphQL makes it so good, in fact, that it fools you into thinking it does things it doesn’t do. For instance, it produces the illusion that you can actually control the response shape &lt;em&gt;from the client&lt;/em&gt;. Unfortunately, I’m here to burst your bubble… but don’t worry, there’s good news too.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="GraphQL" scheme="http://chasingmaxwell.com/tags/GraphQL/"/>
+    
+      <category term="APIs" scheme="http://chasingmaxwell.com/tags/APIs/"/>
+    
+      <category term="JavaScript" scheme="http://chasingmaxwell.com/tags/JavaScript/"/>
+    
+      <category term="NodeJS" scheme="http://chasingmaxwell.com/tags/NodeJS/"/>
+    
+      <category term="React" scheme="http://chasingmaxwell.com/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>From Nodeunit to Jest: The Post-Nodeunit Jest Survival Guide</title>
@@ -94,15 +127,15 @@
     </summary>
     
     
+      <category term="JavaScript" scheme="http://chasingmaxwell.com/tags/JavaScript/"/>
+    
+      <category term="NodeJS" scheme="http://chasingmaxwell.com/tags/NodeJS/"/>
+    
       <category term="Nodeunit" scheme="http://chasingmaxwell.com/tags/Nodeunit/"/>
     
       <category term="Jest" scheme="http://chasingmaxwell.com/tags/Jest/"/>
     
       <category term="Testing" scheme="http://chasingmaxwell.com/tags/Testing/"/>
-    
-      <category term="NodeJS" scheme="http://chasingmaxwell.com/tags/NodeJS/"/>
-    
-      <category term="JavaScript" scheme="http://chasingmaxwell.com/tags/JavaScript/"/>
     
   </entry>
   
